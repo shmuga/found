@@ -1,4 +1,6 @@
-# Found
+<p align="center"><img src="docs/icon.png" width="160" alt="Found icon"></p>
+
+<h1 align="center">Found</h1>
 
 A desktop app for scans of found objects — things picked up off the street, out of drawers,
 from flea markets — put on the scanner bed. Crop, develop, glitch, tag, file into collections,
@@ -37,6 +39,8 @@ cargo run --release                 # startup picker (or: cargo run --release --
 cargo test                          # unit + headless UI tests
 scripts/bundle-macos.sh --dmg       # → target/macos/Found.app + Found.dmg
 ```
+
+GPL-3.0 · [credits](CREDITS.md)
 
 Coming from the earlier name (Scanner)? Settings are copied over on first launch and each
 library's hidden `.scanner` folder is renamed to `.found` when you open it.
@@ -228,16 +232,31 @@ library/
 ## macOS app
 
 ```sh
-scripts/bundle-macos.sh               # → target/macos/Found.app (this Mac's architecture)
-scripts/bundle-macos.sh --dmg         # … plus target/macos/Found.dmg (drag to Applications)
-scripts/bundle-macos.sh --universal   # Apple silicon + Intel in one binary
+scripts/bundle-macos.sh                 # → target/macos/Found.app (this Mac's architecture)
+scripts/bundle-macos.sh --dmg           # … plus target/macos/Found.dmg
+scripts/bundle-macos.sh --universal --dmg --notarize   # signed + notarized release build
 ```
 
-The script builds a release binary, renders the icon (`examples/icon.rs`), writes `Info.plist`
-and ad-hoc signs the app, which is enough to run it on this Mac. To hand it to other people
-without Gatekeeper warnings, sign with your Developer ID (`SIGN_IDENTITY="Developer ID
-Application: …" scripts/bundle-macos.sh --dmg`) and notarize the DMG with `xcrun notarytool`.
-`BUNDLE_ID` overrides the bundle identifier (`local.found.app`).
+Signing uses the first **Developer ID Application** certificate in your keychain (override
+with `SIGN_IDENTITY`), with the hardened runtime; without one the app is ad-hoc signed and only
+runs on this Mac. `BUNDLE_ID` overrides the identifier (`io.github.shmuga.found`).
+
+### Releases
+
+One-time setup: create a *Developer ID Application* certificate (Xcode › Settings › Accounts ›
+Manage Certificates › +) and store notarization credentials with an app-specific password
+from appleid.apple.com:
+
+```sh
+xcrun notarytool store-credentials found-notary --apple-id you@example.com --team-id TEAMID
+```
+
+Then, per release:
+
+```sh
+scripts/bundle-macos.sh --universal --dmg --notarize
+gh release create v0.1.0 target/macos/Found.dmg --title "Found 0.1.0" --generate-notes
+```
 
 ### Icon
 
@@ -246,15 +265,9 @@ macOS icon shape as `assets/icon.png` (used by the window, the Dock and `Found.a
 it: `scripts/set-icon.sh path/to/square-picture.png` (or `a|b|c` for the generated designs in
 `examples/icon.rs`), then `scripts/bundle-macos.sh`.
 
-## Licences
+## Licence
 
-Fonts are egui's embedded defaults (Ubuntu Light — Ubuntu Font Licence; Hack — MIT/Bitstream
-Vera; Noto Emoji — SIL OFL; emoji-icon-font — MIT/OFL), all of which allow embedding and
-redistribution with their licence texts. All crates are permissive (MIT / Apache / BSD /
-Zlib…; dual-licensed ones are used under MIT/Apache; `option-ext` is MPL-2.0, unmodified). The
-theme, icons and toolbar glyphs are original.
-`python3 scripts/licenses.py` regenerates `THIRD_PARTY_LICENSES.md`, which ships inside the
-app (Settings › Third-party licences…).
+[GPL-3.0](LICENSE). Credits and font licences: [CREDITS.md](CREDITS.md).
 
 ## Tests
 

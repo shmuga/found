@@ -213,8 +213,8 @@ impl FoundApp {
                     self.save_settings();
                 }
                 if ui
-                    .button("Third-party licences…")
-                    .on_hover_text("Fonts and open-source components bundled with Found")
+                    .button("Credits & licence…")
+                    .on_hover_text("GPL-3.0; fonts and open-source components used by Found")
                     .clicked()
                     && let Some(p) = licences_file()
                 {
@@ -225,14 +225,11 @@ impl FoundApp {
     }
 }
 
-/// THIRD_PARTY_LICENSES.md: next to the binary in the .app (Contents/Resources), else the repo.
+/// CREDITS.md: next to the binary in the .app (Contents/Resources), else the repo.
 fn licences_file() -> Option<PathBuf> {
     let exe = std::env::current_exe().ok()?;
-    let bundled = exe
-        .parent()?
-        .parent()?
-        .join("Resources/THIRD_PARTY_LICENSES.md");
-    let repo = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("THIRD_PARTY_LICENSES.md");
+    let bundled = exe.parent()?.parent()?.join("Resources/CREDITS.md");
+    let repo = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("CREDITS.md");
     [bundled, repo].into_iter().find(|p| p.exists())
 }
 

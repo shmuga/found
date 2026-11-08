@@ -4,25 +4,35 @@
 #   scripts/bundle-macos.sh              # this Mac's architecture
 #   scripts/bundle-macos.sh --universal  # Apple silicon + Intel (needs both rustup targets)
 #   scripts/bundle-macos.sh --dmg        # also make target/macos/Found.dmg
+#   scripts/bundle-macos.sh --universal --dmg --notarize   # release build
 #
-# The app is ad-hoc signed, which is enough to run it on this Mac. To give it to other people
-# without Gatekeeper warnings, sign with a Developer ID and notarize (see README).
+# Signing: uses the first "Developer ID Application" certificate in your keychain (or
+# SIGN_IDENTITY), with the hardened runtime; without one the app is ad-hoc signed (runs on
+# this Mac only). --notarize submits the DMG to Apple with the notarytool keychain profile
+# NOTARY_PROFILE (default "found-notary") and staples the ticket.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 UNIVERSAL=0
 DMG=0
+NOTARIZE=0
 for a in "$@"; do
   case "$a" in
     --universal) UNIVERSAL=1 ;;
     --dmg) DMG=1 ;;
+    --notarize) NOTARIZE=1; DMG=1 ;;
     *) echo "unknown option: $a" >&2; exit 2 ;;
   esac
 done
 
 NAME="Found"
 BIN="found"
-ID="${BUNDLE_ID:-local.found.app}"
+ID="${BUNDLE_ID:-io.github.shmuga.found}"
+SIGN="${SIGN_IDENTITY:-$(security find-identity -v -p codesigning 2>/dev/null | sed -n 's/.*"\(Developer ID Application:[^"]*\)".*/\1/p' | head -1)}"
+if [ "$NOTARIZE" = 1 ] && [ -z "$SIGN" ]; then
+  echo "--notarize needs a Developer ID Application certificate (see README › Releases)" >&2
+  exit 1
+fi
 VERSION="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
 OUT="target/macos"
 APP="$OUT/$NAME.app"
@@ -60,8 +70,8 @@ rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$EXE" "$APP/Contents/MacOS/$BIN"
 cp "$WORK/AppIcon.icns" "$APP/Contents/Resources/AppIcon.icns"
-python3 scripts/licenses.py >/dev/null
-cp THIRD_PARTY_LICENSES.md "$APP/Contents/Resources/"
+cp LICENSE CREDITS.md "$APP/Contents/Resources/"
+cp -R licenses "$APP/Contents/Resources/"
 cat > "$APP/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -84,9 +94,14 @@ cat > "$APP/Contents/Info.plist" <<PLIST
 </plist>
 PLIST
 
-echo "==> sign (ad-hoc)"
-codesign --force --deep --sign "${SIGN_IDENTITY:--}" "$APP"
-codesign --verify --deep --strict "$APP"
+if [ -n "$SIGN" ]; then
+  echo "==> sign: $SIGN (hardened runtime)"
+  codesign --force --options runtime --timestamp --sign "$SIGN" "$APP"
+else
+  echo "==> sign (ad-hoc — no Developer ID certificate found)"
+  codesign --force --sign - "$APP"
+fi
+codesign --verify --strict --verbose=1 "$APP"
 
 if [ "$DMG" = 1 ]; then
   echo "==> dmg"
@@ -96,7 +111,17 @@ if [ "$DMG" = 1 ]; then
   ln -s /Applications "$STAGE/Applications"
   rm -f "$OUT/$NAME.dmg"
   hdiutil create -volname "$NAME" -srcfolder "$STAGE" -ov -format UDZO "$OUT/$NAME.dmg" >/dev/null
+  if [ -n "$SIGN" ]; then
+    codesign --force --timestamp --sign "$SIGN" "$OUT/$NAME.dmg"
+  fi
   echo "    $OUT/$NAME.dmg"
+fi
+
+if [ "$NOTARIZE" = 1 ]; then
+  echo "==> notarize (this takes a few minutes)"
+  xcrun notarytool submit "$OUT/$NAME.dmg" --keychain-profile "${NOTARY_PROFILE:-found-notary}" --wait
+  xcrun stapler staple "$OUT/$NAME.dmg"
+  spctl --assess --type open --context context:primary-signature --verbose=2 "$OUT/$NAME.dmg"
 fi
 
 echo "==> done: $APP"
