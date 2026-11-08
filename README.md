@@ -243,20 +243,18 @@ runs on this Mac. `BUNDLE_ID` overrides the identifier (`io.github.shmuga.found`
 
 ### Releases
 
-One-time setup: create a *Developer ID Application* certificate (Xcode › Settings › Accounts ›
-Manage Certificates › +) and store notarization credentials with an app-specific password
-from appleid.apple.com:
+Needs a *Developer ID Application* certificate (Xcode › Settings › Accounts › Manage
+Certificates › +). Then:
 
 ```sh
-xcrun notarytool store-credentials found-notary --apple-id you@example.com --team-id TEAMID
-```
-
-Then, per release:
-
-```sh
-scripts/bundle-macos.sh --universal --dmg --notarize
+scripts/bundle-macos.sh --universal --dmg          # build + sign app and DMG
+xcrun notarytool submit target/macos/Found.dmg --apple-id YOU --team-id TEAM --wait
+xcrun stapler staple target/macos/Found.dmg
 gh release create v0.1.0 target/macos/Found.dmg --title "Found 0.1.0" --generate-notes
 ```
+
+(`--notarize` does the two `xcrun` steps for you if you store a notarytool keychain profile
+named `found-notary`.)
 
 ### Icon
 
