@@ -1,0 +1,46 @@
+[package]
+name = "found"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+
+[lib]
+name = "found"
+path = "src/lib.rs"
+
+[[bin]]
+name = "found"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.36", default-features = false, features = ["wgpu", "accesskit", "default_fonts"] }
+egui = { version = "0.36", features = ["serde"] }
+egui-snarl = { version = "0.12", features = ["serde"] }
+petgraph = "0.8"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "tiff", "rayon"] }
+jpeg-decoder = { version = "0.3", default-features = false }
+rfd = "0.15"
+rayon = "1.12"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "6"
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+log = "0.4"
+env_logger = "0.11"
+lopdf = { version = "0.47", default-features = false }
+
+[dev-dependencies]
+egui_kittest = { version = "0.36", features = ["eframe", "wgpu"] }
+flate2 = "1"
+lopdf = { version = "0.47", default-features = false }
+tempfile = "3"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.test]
+opt-level = 2

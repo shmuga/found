@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 590" width="1290" height="590" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1290" height="590" rx="12" fill="#c4c7cc"/>
+<path d="M240,63.0 L290,63.0" fill="none" stroke="#609cec" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M490,63.0 L540,63.0" fill="none" stroke="#609cec" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M740,63.0 L790,63.0" fill="none" stroke="#54aa48" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M990,63.0 L1040,63.0" fill="none" stroke="#54aa48" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M1140.0,122 L1140.0,230" fill="none" stroke="#e2c234" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M1140.0,302 L1140.0,410" fill="none" stroke="#e2c234" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M1040,243.0 L990,243.0" fill="none" stroke="#e2c234" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M890.0,230 L890.0,122" fill="none" stroke="#54aa48" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M890.0,302 L890.0,410" fill="none" stroke="#e2c234" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M790,423.0 L740,423.0" fill="none" stroke="#e2c234" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M640.0,122 L640.0,230" fill="none" stroke="#54aa48" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M640.0,302 L640.0,410" fill="none" stroke="#54aa48" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M490,243.0 L505.0,243.0 Q515,243.0 515.0,233.0 L515.0,112.0 Q515,102 525.0,102.0 L540,102" fill="none" stroke="#609cec" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="42" y="53" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="40" y="50" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M40,76 V56 Q40,50 46,50 H234 Q240,50 240,56 V76 Z" fill="#585a5e"/>
+<path d="M40,54 V56 Q40,50 46,50 H234 Q240,50 240,56 V54 Z" fill="#609cec"/>
+<text x="50" y="68" font-size="13" fill="#eeeeee" font-weight="600">Scans</text>
+<text x="50" y="94" font-size="11.5" fill="#3a3c40">JPEG · PNG · TIFF · PDF</text>
+<text x="50" y="110" font-size="11.5" fill="#3a3c40">scanner output / drop</text>
+<rect x="292" y="53" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="290" y="50" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M290,76 V56 Q290,50 296,50 H484 Q490,50 490,56 V76 Z" fill="#585a5e"/>
+<path d="M290,54 V56 Q290,50 296,50 H484 Q490,50 490,56 V54 Z" fill="#609cec"/>
+<text x="300" y="68" font-size="13" fill="#eeeeee" font-weight="600">io · pdf</text>
+<text x="300" y="94" font-size="11.5" fill="#3a3c40">DCT-scaled decode</text>
+<text x="300" y="110" font-size="11.5" fill="#3a3c40">PDF page extraction</text>
+<rect x="542" y="53" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="540" y="50" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M540,76 V56 Q540,50 546,50 H734 Q740,50 740,56 V76 Z" fill="#585a5e"/>
+<path d="M540,54 V56 Q540,50 546,50 H734 Q740,50 740,56 V54 Z" fill="#54aa48"/>
+<text x="550" y="68" font-size="13" fill="#eeeeee" font-weight="600">Library</text>
+<text x="550" y="94" font-size="11.5" fill="#3a3c40">Inbox · collections</text>
+<text x="550" y="110" font-size="11.5" fill="#3a3c40">sidecars · local trash</text>
+<rect x="792" y="53" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="790" y="50" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M790,76 V56 Q790,50 796,50 H984 Q990,50 990,56 V76 Z" fill="#585a5e"/>
+<path d="M790,54 V56 Q790,50 796,50 H984 Q990,50 990,56 V54 Z" fill="#54aa48"/>
+<text x="800" y="68" font-size="13" fill="#eeeeee" font-weight="600">UI (egui)</text>
+<text x="800" y="94" font-size="11.5" fill="#3a3c40">grid · editor · collage</text>
+<text x="800" y="110" font-size="11.5" fill="#3a3c40">vim keys · ⌘ shortcuts</text>
+<rect x="1042" y="53" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="1040" y="50" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M1040,76 V56 Q1040,50 1046,50 H1234 Q1240,50 1240,56 V76 Z" fill="#585a5e"/>
+<path d="M1040,54 V56 Q1040,50 1046,50 H1234 Q1240,50 1240,56 V54 Z" fill="#e2c234"/>
+<text x="1050" y="68" font-size="13" fill="#eeeeee" font-weight="600">Recipe graph</text>
+<text x="1050" y="94" font-size="11.5" fill="#3a3c40">Scan → ops → Output</text>
+<text x="1050" y="110" font-size="11.5" fill="#3a3c40">Blend · Mask · Split</text>
+<rect x="292" y="233" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="290" y="230" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M290,256 V236 Q290,230 296,230 H484 Q490,230 490,236 V256 Z" fill="#585a5e"/>
+<path d="M290,234 V236 Q290,230 296,230 H484 Q490,230 490,236 V234 Z" fill="#609cec"/>
+<text x="300" y="248" font-size="13" fill="#eeeeee" font-weight="600">Settings</text>
+<text x="300" y="274" font-size="11.5" fill="#3a3c40">JSON in config dir</text>
+<text x="300" y="290" font-size="11.5" fill="#3a3c40">folders · layout · keys</text>
+<rect x="542" y="233" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="540" y="230" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M540,256 V236 Q540,230 546,230 H734 Q740,230 740,236 V256 Z" fill="#585a5e"/>
+<path d="M540,234 V236 Q540,230 546,230 H734 Q740,230 740,236 V234 Z" fill="#54aa48"/>
+<text x="550" y="248" font-size="13" fill="#eeeeee" font-weight="600">Collage</text>
+<text x="550" y="274" font-size="11.5" fill="#3a3c40">layers · masks · frames</text>
+<text x="550" y="290" font-size="11.5" fill="#3a3c40">→ collage.jpg</text>
+<rect x="792" y="233" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="790" y="230" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M790,256 V236 Q790,230 796,230 H984 Q990,230 990,236 V256 Z" fill="#585a5e"/>
+<path d="M790,234 V236 Q790,230 796,230 H984 Q990,230 990,236 V234 Z" fill="#54aa48"/>
+<text x="800" y="248" font-size="13" fill="#eeeeee" font-weight="600">Worker</text>
+<text x="800" y="274" font-size="11.5" fill="#3a3c40">background jobs</text>
+<text x="800" y="290" font-size="11.5" fill="#3a3c40">rayon pool</text>
+<rect x="1042" y="233" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="1040" y="230" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M1040,256 V236 Q1040,230 1046,230 H1234 Q1240,230 1240,236 V256 Z" fill="#585a5e"/>
+<path d="M1040,234 V236 Q1040,230 1046,230 H1234 Q1240,230 1240,236 V234 Z" fill="#e2c234"/>
+<text x="1050" y="248" font-size="13" fill="#eeeeee" font-weight="600">Evaluator</text>
+<text x="1050" y="274" font-size="11.5" fill="#3a3c40">per-output cache</text>
+<text x="1050" y="290" font-size="11.5" fill="#3a3c40">live preview</text>
+<rect x="542" y="413" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="540" y="410" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M540,436 V416 Q540,410 546,410 H734 Q740,410 740,416 V436 Z" fill="#585a5e"/>
+<path d="M540,414 V416 Q540,410 546,410 H734 Q740,410 740,416 V414 Z" fill="#609cec"/>
+<text x="550" y="428" font-size="13" fill="#eeeeee" font-weight="600">Library folder</text>
+<text x="550" y="454" font-size="11.5" fill="#3a3c40">0001.orig.jpg · .json</text>
+<text x="550" y="470" font-size="11.5" fill="#3a3c40">0001.edit.jpg · .found/</text>
+<rect x="792" y="413" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="790" y="410" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M790,436 V416 Q790,410 796,410 H984 Q990,410 990,416 V436 Z" fill="#585a5e"/>
+<path d="M790,414 V416 Q790,410 796,410 H984 Q990,410 990,416 V414 Z" fill="#e2c234"/>
+<text x="800" y="428" font-size="13" fill="#eeeeee" font-weight="600">render_full</text>
+<text x="800" y="454" font-size="11.5" fill="#3a3c40">full-res, uncached</text>
+<text x="800" y="470" font-size="11.5" fill="#3a3c40">→ edit.jpg (q95)</text>
+<rect x="1042" y="413" width="200" height="72" rx="6" fill="#000" opacity="0.12"/>
+<rect x="1040" y="410" width="200" height="72" rx="6" fill="#dcdee2" stroke="#8a8d92"/>
+<path d="M1040,436 V416 Q1040,410 1046,410 H1234 Q1240,410 1240,416 V436 Z" fill="#585a5e"/>
+<path d="M1040,414 V416 Q1040,410 1046,410 H1234 Q1240,410 1240,416 V414 Z" fill="#e2c234"/>
+<text x="1050" y="428" font-size="13" fill="#eeeeee" font-weight="600">ops</text>
+<text x="1050" y="454" font-size="11.5" fill="#3a3c40">crop · WB · clarity</text>
+<text x="1050" y="470" font-size="11.5" fill="#3a3c40">glitch · blend · mask · split</text>
+<circle cx="540" cy="63.0" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="890.0" cy="122" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1040" cy="243.0" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="540" cy="102" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="640.0" cy="122" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="890.0" cy="410" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="890.0" cy="230" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="990" cy="243.0" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="790" cy="63.0" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="640.0" cy="302" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1140.0" cy="410" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1140.0" cy="122" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="490" cy="243.0" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="240" cy="63.0" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1140.0" cy="302" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="790" cy="423.0" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="640.0" cy="230" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="740" cy="63.0" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1140.0" cy="230" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="890.0" cy="302" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="290" cy="63.0" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="490" cy="63.0" r="4" fill="#609cec" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="1040" cy="63.0" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="990" cy="63.0" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="640.0" cy="410" r="4" fill="#54aa48" stroke="#585a5e" stroke-width="1.2"/>
+<circle cx="740" cy="423.0" r="4" fill="#e2c234" stroke="#585a5e" stroke-width="1.2"/>
+<rect x="40" y="556" width="22" height="4" rx="2" fill="#609cec"/>
+<text x="70" y="562" font-size="11.5" fill="#16171a">files / I/O</text>
+<rect x="190" y="556" width="22" height="4" rx="2" fill="#54aa48"/>
+<text x="220" y="562" font-size="11.5" fill="#16171a">app core</text>
+<rect x="340" y="556" width="22" height="4" rx="2" fill="#e2c234"/>
+<text x="370" y="562" font-size="11.5" fill="#16171a">image processing</text>
+</svg>
